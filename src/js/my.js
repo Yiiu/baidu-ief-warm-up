@@ -2,8 +2,8 @@
     var header = document.getElementsByTagName('header')[0];
     var content = document.getElementsByClassName('content')[0];
     var profile = document.getElementById('profile');
-    var int_box = document.getElementsByClassName('int-box');
     var turn = false;
+    var iturn = false;
     var sheader = setInterval(function(){        
         if(turn){
             clearInterval(sheader);
@@ -14,17 +14,11 @@
         }
     },1000)
     var pset = setInterval(function(){
-        if(turn){
+        if(iturn){
             clearInterval(pset);
         }else{
-            
-            for(var i=0;i<int_box.length;i++){
-                var c = i*100;
-                var c_i = setInterval(function(){
-                    int_box[i].style.opacity = "1";
-                },c)
-            }
-            turn = true;
+            profile.style.opacity = "1";
+            iturn = true;
         }
-    },1100)
+    },1600)
 })()
